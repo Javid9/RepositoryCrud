@@ -1,0 +1,104 @@
+﻿@model List<RepositoryDemo.Entity.Product>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <a class="btn btn-info mt-2" asp-action="Add"> Create Product</a>
+    <table class="table table-dark table-hover mt-2">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">CategoryName</th>
+            <th scope="col">Prices</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <input type="checkbox" class="speaker-input" name="productList" id="@item.Name" value="@item.Id">
+                </td>
+                
+                <td>
+                    <img src="~/image/@item.Image" style="width:100px;height:100px"/>
+                </td>
+                <td>@item.Name</td>
+                <td>@item.Category.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>
+                    <a class="btn-outline-primary" asp-action="Update" asp-route-id="@item.Id">
+                        Update
+                    </a>
+                </td>
+                <td>
+                    <a class="btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary mt-2 " id="save-order" style="width: 17%" >Order Save</a>
+</div>
+
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+    let saveOrderBtn=document.getElementById("save-order");
+    saveOrderBtn.addEventListener("click",function (){
+       let checkBoxs=document.querySelectorAll(".speaker-input");
+            let checkBoxsValueArr=[]
+            checkBoxs.forEach(item =>{
+                if (item.checked){
+                    checkBoxsValueArr.push(Number(item.value));
+                    };
+            } );
+            if (checkBoxsValueArr.length>0){
+                let formData=new FormData();
+                checkBoxsValueArr.forEach(item =>{
+                  formData.append("productList[]",item)
+                })
+                axios.post('/order/create',formData)
+                  .then(function (response) {
+                      Swal.fire({
+                        title: 'Good job!',
+                        text: 'Product saved successfully.',
+                        success:'success',
+                        timer: 2000
+                      })
+
+                  })
+                  .catch(function (error) {
+                        Swal.fire(
+                            'Good job!',
+                             'Not found bro',
+                             'error'
+                           )              
+                  });
+            }    
+            else{
+                 Swal.fire(
+                    'Oops!',
+                     'Please select product',
+                     'error'
+                   )     
+           }
+    })
+     
+    </script>
+}

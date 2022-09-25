@@ -1,0 +1,66 @@
+﻿@model RepositoryDemo.Entity.Product
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form asp-action="Update" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>
+            Product Name: <span class="text-danger">*</span>
+            <span asp-validation-for="@Model.Name" class="text-danger">
+            </span>
+        </label>
+        <input type="text" asp-for="@Model.Name" class="form-control">
+    </div>
+
+
+    <div class="form-group mt-1">
+        <label>
+            Select Category
+            <span class="text-danger">*</span>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </label>
+        <select class="form-select" asp-for="CategoryId" asp-items="ViewBag.categories">
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label>
+            Price
+            <span class="text-danger">*</span>
+            <span asp-validation-for="@Model.Price" class="text-danger">
+            </span>
+        </label>
+        <input type="text" asp-for="Price" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label>
+            Quantity
+            <span class="text-danger">*</span>
+            <span asp-validation-for="@Model.Quantity" class="text-danger">
+            </span>
+        </label>
+        <input type="text" asp-for="Quantity" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Photo"></label>
+        <input asp-for="Photo" class="form-control" accept="image/*">
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-3">Create</button>
+    </div>
+
+    <div asp-validation-summary="All">
+    </div>
+
+</form>

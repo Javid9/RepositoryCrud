@@ -1,0 +1,18 @@
+﻿@model RepositoryDemo.Dtos.CategoryUpdateDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <form asp-controller="Category" asp-action="Update" method="post" enctype="multipart/form-data">
+        <div class="form-group row">
+            <div class="col-sm-9">
+                <input asp-for="Name" class="form-control" placeholder="Category Name"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Update Category</button>
+    </form>
+</div>
