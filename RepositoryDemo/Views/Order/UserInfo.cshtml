@@ -1,0 +1,67 @@
+﻿@model RepositoryDemo.ViewModels.CreateOrderByUserDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form asp-action="UserInfo" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="hidden" name="productId" value="@ViewBag.productId"/>
+        <label>
+            User Fullname: <span class="text-danger">*</span>
+            <span asp-validation-for="FullName" class="text-danger">
+            </span>
+        </label>
+        <input type="text" asp-for="FullName" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label>
+            User Email: <span class="text-danger">*</span>
+            <span asp-validation-for="Email" class="text-danger">
+            </span>
+        </label>
+        <input type="text" asp-for="Email" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-3" id="btn-create">Create</button>
+    </div>
+
+
+    <div asp-validation-summary="All">
+    </div>
+
+</form>
+
+
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+    <script>
+       let msg = @(TempData["notification"] != null ? Html.Raw(TempData["notification"]) : null)
+       if (msg!=null){
+           if (msg.Success===true){
+              Swal.fire({
+                    position:'center',
+                    icon: 'success',
+                    text: msg.Message,
+                })  
+           }else {
+              Swal.fire({
+                position:'center',
+                icon: 'error',
+                text: msg.Message,
+              })
+           }   
+       }
+</script>
+}
+

@@ -33,9 +33,15 @@ public class ProductService : IProductService
 
     public async Task<IDataResult<Product>> Get(int id)
     {
-        var product = await _productRepository.Get(x=>x.Id==id, new[] { "Category" });
-        if (product is null) return new ErrorDataResult<Product>(product, 404, "Not Found");
-        return new SuccessDataResult<Product>(product, 200);
+        var result = await _productRepository.Get(x => x.Id == id, new[] { "Category" });
+        if (result is null) return new ErrorDataResult<Product>(result, 404, "Not Found");
+        return new SuccessDataResult<Product>(result, 200);
+    }
+
+    public async Task<IDataResult<Product>> Details(int id)
+    {
+        var result = await _productRepository.Table.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id);
+        return new SuccessDataResult<Product>(result, 200, "success");
     }
 
 
@@ -44,7 +50,7 @@ public class ProductService : IProductService
         var result = await _categoryRepository.Get(x => x.Id == productCreateDto.CategoryId);
 
         if (productCreateDto.Photo is null) return new ErrorResult(400, "File not found");
-        
+
         if (result is null) return new ErrorResult(404, "Category not found");
 
 
@@ -76,11 +82,11 @@ public class ProductService : IProductService
             .FirstOrDefaultAsync(x => x.Id == productUpdateDto.Id);
 
 
-        if (productUpdateDto.Photo is null) return new ErrorResult(400,"File not found");
-        
+        if (productUpdateDto.Photo is null) return new ErrorResult(400, "File not found");
+
         var path = Path.Combine("image");
         var fileName = await productUpdateDto.Photo.SaveImg(_env.WebRootPath, path);
-        
+
         result.Name = productUpdateDto.Name;
         result.Price = productUpdateDto.Price;
         result.Quantity = productUpdateDto.Quantity;

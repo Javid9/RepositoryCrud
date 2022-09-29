@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qJNCRwDrGOd2W4SxpsPUPH0QegxrJMS1HT1Fov396yk=",
+  "Hash": "16UsJ3UaIwDf3rzG2H5bXr6DOqZ239OU7XJO4KAqpHk=",
   "Source": "RepositoryDemo",
   "BasePath": "_content/RepositoryDemo",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\image\\226de8e9-b383-42c3-a90c-ed42d21cd0daweb-developer-wallpaper-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\24c14cf5-2893-4986-8e2a-69dd05461fd3web-developer-background_2358378.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/24c14cf5-2893-4986-8e2a-69dd05461fd3web-developer-background_2358378.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\24c14cf5-2893-4986-8e2a-69dd05461fd3web-developer-background_2358378.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\26a57742-5a76-49cc-bd11-a41f3bd61dc9web-developer-background_2358378.jpg",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -221,6 +238,23 @@
       "OriginalItemSpec": "wwwroot\\image\\28271fb7-45f4-4244-ac19-e6a9f93ef7dcdepositphotos_174376242-stock-video-abstract-technology-background-web-developer.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\296c6c4e-f5b2-4beb-ba88-19ebce8d647c10-Demain-le-mot-anglais-blanc.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/296c6c4e-f5b2-4beb-ba88-19ebce8d647c10-Demain-le-mot-anglais-blanc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\296c6c4e-f5b2-4beb-ba88-19ebce8d647c10-Demain-le-mot-anglais-blanc.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\380165c9-f2c0-4659-a38c-b038a0691bfewp1828903.png",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -236,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\380165c9-f2c0-4659-a38c-b038a0691bfewp1828903.png"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\3df4296d-0414-40a4-9437-6c63461627efwp1828903.png",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/3df4296d-0414-40a4-9437-6c63461627efwp1828903.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\3df4296d-0414-40a4-9437-6c63461627efwp1828903.png"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\42c020a8-2acf-43be-9473-b65bacdd9786web-developer-wallpaper-1.jpg",
@@ -270,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\552a7f6e-4d84-46c8-8a27-d49c9982a8c3img-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\58367912-6a65-423b-b937-9fecc6b0e59aimg-1.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/58367912-6a65-423b-b937-9fecc6b0e59aimg-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\58367912-6a65-423b-b937-9fecc6b0e59aimg-1.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\5a95ac3f-f0ae-494c-ac21-e0b250fdff8fimg-1.jpg",
@@ -374,6 +442,23 @@
       "OriginalItemSpec": "wwwroot\\image\\70c28803-32e4-45ac-b876-7c3c08e06be8img-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\7ad5c559-88c5-4296-a77a-17554680eb0bimg-1.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/7ad5c559-88c5-4296-a77a-17554680eb0bimg-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\7ad5c559-88c5-4296-a77a-17554680eb0bimg-1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\7d5fa179-19f1-41d6-be6e-5c3d74e8745bweb-developer-background_2358378.jpg",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -440,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\87d2418c-a179-4a6c-8919-8b0b3e5ccdb8wp1828973.png"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\8aa802a6-566e-4613-81df-1ed029061c09DeadlineTimeByPCbots.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/8aa802a6-566e-4613-81df-1ed029061c09DeadlineTimeByPCbots.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\8aa802a6-566e-4613-81df-1ed029061c09DeadlineTimeByPCbots.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\8bdd2aa5-d70b-47e0-9a2a-c9a029970e16img-1.jpg",
@@ -612,6 +714,23 @@
       "OriginalItemSpec": "wwwroot\\image\\b09fd692-393d-47f0-927d-804ccf84c09bimg-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\b1e86d9d-04e0-4cbf-922e-e5b435820640visual-web-developer-background-image-3.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/b1e86d9d-04e0-4cbf-922e-e5b435820640visual-web-developer-background-image-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\b1e86d9d-04e0-4cbf-922e-e5b435820640visual-web-developer-background-image-3.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\c36a5211-e48c-4e50-bfdb-743342c120f5img-1.jpg",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -680,6 +799,23 @@
       "OriginalItemSpec": "wwwroot\\image\\cabccba9-cfcd-4388-a963-f6c7d47660b8depositphotos_174376242-stock-video-abstract-technology-background-web-developer.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\d5ff5116-e7df-45c6-9041-5dc38e081d2awp1828903.png",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/d5ff5116-e7df-45c6-9041-5dc38e081d2awp1828903.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\d5ff5116-e7df-45c6-9041-5dc38e081d2awp1828903.png"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\dfc61eb4-ed2e-40ef-8df4-5d2130961802wp1828903.png",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -712,6 +848,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\e21231a0-ffc5-45b6-b6bd-b7ee12f45e1eDeadlineTimeByPCbots.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\e7c2c528-b708-4b93-ae9f-4b9125de5f1dimg-1.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/e7c2c528-b708-4b93-ae9f-4b9125de5f1dimg-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\e7c2c528-b708-4b93-ae9f-4b9125de5f1dimg-1.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\f3596fbf-3ef7-47e3-9602-84f5af4c41a4visual-web-developer-background-image-3.jpg",

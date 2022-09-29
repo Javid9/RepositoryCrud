@@ -19,10 +19,8 @@ public static class DependenciesExtension
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IUserService, UserService>();
-        
-        
+
+
         services.AddScoped<IProductOrderRepository, ProductOrderRepository>();
-        
-        
     }
 }

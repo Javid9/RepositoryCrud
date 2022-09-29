@@ -9,6 +9,7 @@ public interface IProductService
 {
     Task<IDataResult<List<Product>>> GetAll();
     Task<IDataResult<Product>> Get(int id);
+    Task<IDataResult<Product>> Details(int id);
     Task<IResult> Add(ProductCreateDto productCreateDto);
 
     Task<IResult> UpdateProduct(ProductUpdateDto productUpdateDto);
