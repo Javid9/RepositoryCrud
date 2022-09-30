@@ -9,13 +9,13 @@ public class OrderController : Controller
 {
     private readonly IOrderService _orderService;
 
-    // GET
     public OrderController(IOrderService orderService)
     {
         _orderService = orderService;
     }
 
 
+    // GET All
     public async Task<IActionResult> Index()
     {
         var result = await _orderService.GetAll();
@@ -23,6 +23,7 @@ public class OrderController : Controller
     }
 
 
+    //Create
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] List<int> productList)
     {
@@ -32,32 +33,38 @@ public class OrderController : Controller
     }
 
 
+    //User Info Get
     public async Task<IActionResult> UserInfo(int productId)
     {
         ViewBag.productId = productId;
-
-        TempData["id"] = JsonSerializer.Serialize(productId);
-
         return View();
     }
 
 
+    //User Info Post
     [HttpPost]
     public async Task<IActionResult> UserInfo(CreateOrderByUserDto createOrderByUserDto, int productId)
     {
         var result = await _orderService.CreateOrderByUser(createOrderByUserDto, productId);
-        var msg = Notify(result.Success, result.Message);
+        
+        (string message, bool success) msg;
+        
         if (!result.Success)
         {
-            ModelState.AddModelError("errorMessage", result.Message);
-            return RedirectToAction("UserInfo");
+            // ModelState.AddModelError("errorMessage", result.Message);
+            msg = Notify(result.Success, result.Message);
+
+            return RedirectToAction("UserInfo", msg);
         }
 
-        
+        msg = Notify(result.Success, result.Message);
+
+
         return RedirectToAction("UserInfo", msg);
     }
 
-    
+
+    // Alert
     private (string message, bool success) Notify(bool success, string message)
     {
         var msg = new

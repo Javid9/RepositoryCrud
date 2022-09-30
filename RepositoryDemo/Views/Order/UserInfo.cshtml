@@ -42,8 +42,7 @@
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
+    <partial name="_ValidationScriptsPartial"/>
 
     <script>
        let msg = @(TempData["notification"] != null ? Html.Raw(TempData["notification"]) : null)
@@ -53,13 +52,17 @@
                     position:'center',
                     icon: 'success',
                     text: msg.Message,
-                })  
+                }).then(function() {
+                       window.location = "/Order/Index";
+                   });
            }else {
               Swal.fire({
                 position:'center',
                 icon: 'error',
                 text: msg.Message,
-              })
+              }).then(function() {
+                   window.location = "/Product/Index";
+               });
            }   
        }
 </script>

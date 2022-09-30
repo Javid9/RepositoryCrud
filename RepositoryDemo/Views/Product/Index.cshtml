@@ -5,6 +5,8 @@
     Layout = "_Layout";
 }
 
+
+
 <div class="row">
     <a class="btn btn-info mt-2" asp-action="Add"> Create Product</a>
     <table class="table table-dark table-hover mt-2">
@@ -70,7 +72,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
-    
     <script>
     let saveOrderBtn=document.getElementById("save-order");
     saveOrderBtn.addEventListener("click",function (){
@@ -100,8 +101,8 @@
                   })
                   .catch(function (error) {
                         Swal.fire(
-                            'sorry bro',
-                             'Not found',
+                            'Sorry bro',
+                             'Are you sure project run?',
                              'error'
                            )              
                   });
@@ -132,8 +133,6 @@
           }
       }); 
     
-      
-      
       
       
     </script>

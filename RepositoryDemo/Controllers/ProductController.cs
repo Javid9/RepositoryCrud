@@ -20,6 +20,7 @@ public class ProductController : Controller
     }
 
 
+    //Get All
     public async Task<IActionResult> Index()
     {
         var products = await _productService.GetAll();
@@ -28,15 +29,16 @@ public class ProductController : Controller
     }
 
 
+    //Details
     public async Task<IActionResult> Details(int id)
     {
-        var defaultUser = await _userService.GetDefaultUser();
-        // ViewBag.defaultUser = defaultUser;
         var product = await _productService.Details(id);
         return View(product.Data);
     }
 
+    
 
+    //Add Get
     public async Task<IActionResult> Add()
     {
         var categories = await _categoryService.GetAll();
@@ -44,7 +46,9 @@ public class ProductController : Controller
         return View();
     }
 
-
+    
+    
+    //Add Post
     [HttpPost]
     public async Task<IActionResult> Add(ProductCreateDto productCreateDto)
     {
@@ -58,7 +62,9 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
+    
 
+    // Update Get
     public async Task<IActionResult> Update(int id)
     {
         var categories = await _categoryService.GetAll();
@@ -74,6 +80,9 @@ public class ProductController : Controller
     }
 
 
+    
+    
+    //Update Post
     [HttpPost]
     public async Task<IActionResult> Update(ProductUpdateDto productUpdateDto)
     {
@@ -89,10 +98,16 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
-
+    
+    
+    
+    // Delete
     public async Task<IActionResult> Delete(int id)
     {
         await _productService.Delete(id);
         return RedirectToAction("Index");
     }
+    
+    
+    
 }

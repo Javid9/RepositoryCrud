@@ -24,6 +24,7 @@ public class ProductService : IProductService
     }
 
 
+ 
     public async Task<IDataResult<List<Product>>> GetAll()
     {
         var products = await _productRepository.GetAll(null, new[] { "Category" });
@@ -31,6 +32,8 @@ public class ProductService : IProductService
         return new SuccessDataResult<List<Product>>(products, 200);
     }
 
+    
+    
     public async Task<IDataResult<Product>> Get(int id)
     {
         var result = await _productRepository.Get(x => x.Id == id, new[] { "Category" });
@@ -38,13 +41,21 @@ public class ProductService : IProductService
         return new SuccessDataResult<Product>(result, 200);
     }
 
+    
+  
     public async Task<IDataResult<Product>> Details(int id)
     {
-        var result = await _productRepository.Table.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id);
+        var result = await _productRepository
+            .Table
+            .Include(x => x.Category)
+            .FirstOrDefaultAsync(x => x.Id == id);
+        
         return new SuccessDataResult<Product>(result, 200, "success");
     }
 
-
+    
+    
+    
     public async Task<IResult> Add(ProductCreateDto productCreateDto)
     {
         var result = await _categoryRepository.Get(x => x.Id == productCreateDto.CategoryId);
@@ -76,6 +87,8 @@ public class ProductService : IProductService
     }
 
 
+    
+ 
     public async Task<IResult> UpdateProduct(ProductUpdateDto productUpdateDto)
     {
         var result = await _productRepository.Table.Include(x => x.Category)
@@ -99,6 +112,7 @@ public class ProductService : IProductService
     }
 
 
+   
     public async Task Delete(int id)
     {
         var result = await _productRepository.Table.FirstOrDefaultAsync(x => x.Id == id);

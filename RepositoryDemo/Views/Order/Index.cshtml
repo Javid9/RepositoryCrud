@@ -20,7 +20,7 @@
         </tr>
         </thead>
         <tbody>
-
+        
         @foreach (var order in Model)
         {
             @foreach (var item in order.ProductOrders)
@@ -34,16 +34,6 @@
                     <td>@item.Product.Category.Name</td>
                     <td>@item.Product.Price.ToString("F")</td>
                     <td>@order.OrderDate</td>
-                    @* <td> *@
-                    @*     <a class="btn-outline-primary" asp-action="Add" asp-route-id="@item.Id"> *@
-                    @*         Update *@
-                    @*     </a> *@
-                    @* </td> *@
-                    @* <td> *@
-                    @*     <a class="btn-outline-danger" asp-action="DeleteCategory" asp-route-id="@item.Id"> *@
-                    @*         Delete *@
-                    @*     </a> *@
-                    @* </td> *@
                 </tr>
             }
         }

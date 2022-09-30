@@ -14,19 +14,23 @@ public class CategoryController : Controller
         _categoryService = categoryService;
     }
 
+    
+    // Get All
     public async Task<IActionResult> Index()
     {
         var categories = await _categoryService.GetAll();
         return View(categories);
     }
 
-
+    
+    // Create Get
     public IActionResult Create()
     {
         return View();
     }
 
 
+    //Create Post
     [HttpPost]
     public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
     {
@@ -40,6 +44,7 @@ public class CategoryController : Controller
     }
 
 
+    //Update Get
     [HttpGet]
     public async Task<IActionResult> Update()
     {
@@ -47,6 +52,7 @@ public class CategoryController : Controller
     }
 
 
+    //Update Post
     [HttpPost]
     public async Task<IActionResult> Update(CategoryUpdateDto categoryUpdateDto)
     {
@@ -60,6 +66,7 @@ public class CategoryController : Controller
     }
 
 
+    //Delete
     public async Task<IActionResult> Delete(int id)
     {
         await _categoryService.Delete(id);

@@ -18,6 +18,7 @@ public class OrderService : IOrderService
         _productOrderRepository = productOrderRepository;
     }
 
+
     public async Task<IDataResult<List<Order>>> GetAll()
     {
         var result = await _orderRepository.Table
@@ -59,9 +60,11 @@ public class OrderService : IOrderService
         return new DataResult<Order>(newOrder, true, 201, "Order successfully save");
     }
 
+
     public async Task<IDataResult<Order>> CreateOrderByUser(CreateOrderByUserDto createOrderByUserDto, int productId)
     {
         // var result = await _orderRepository.Get(x => x.Id == createOrderByUserDto.Id);
+
         var newOrder = new Order
         {
             UserId = 1,
@@ -69,6 +72,7 @@ public class OrderService : IOrderService
             Email = createOrderByUserDto.Email
         };
 
+        if (productId == 0) return new ErrorDataResult<Order>(newOrder, 400, "Product id not found");
 
         await _orderRepository.Add(newOrder);
 
@@ -82,6 +86,6 @@ public class OrderService : IOrderService
 
         await _productOrderRepository.Add(productOrder);
 
-        return new DataResult<Order>(newOrder, true, 201, "Order successfully save");
+        return new DataResult<Order>(newOrder, true, 201, "Order and User successfully save");
     }
 }
