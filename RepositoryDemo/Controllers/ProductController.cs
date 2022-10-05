@@ -3,20 +3,18 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using RepositoryDemo.Dtos;
 using RepositoryDemo.Services.Abstract;
 using RepositoryDemo.ViewModels;
-
+using IResult= RepositoryDemo.Results.IResult;
 namespace RepositoryDemo.Controllers;
 
 public class ProductController : Controller
 {
     private readonly ICategoryService _categoryService;
     private readonly IProductService _productService;
-    private readonly IUserService _userService;
 
     public ProductController(IProductService productService, ICategoryService categoryService, IUserService userService)
     {
         _productService = productService;
         _categoryService = categoryService;
-        _userService = userService;
     }
 
 
@@ -36,7 +34,6 @@ public class ProductController : Controller
         return View(product.Data);
     }
 
-    
 
     //Add Get
     public async Task<IActionResult> Add()
@@ -46,8 +43,7 @@ public class ProductController : Controller
         return View();
     }
 
-    
-    
+
     //Add Post
     [HttpPost]
     public async Task<IActionResult> Add(ProductCreateDto productCreateDto)
@@ -62,7 +58,6 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
-    
 
     // Update Get
     public async Task<IActionResult> Update(int id)
@@ -80,8 +75,6 @@ public class ProductController : Controller
     }
 
 
-    
-    
     //Update Post
     [HttpPost]
     public async Task<IActionResult> Update(ProductUpdateDto productUpdateDto)
@@ -98,15 +91,14 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
-    
-    
-    
+
     // Delete
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IResult> Delete(int id)
     {
-        await _productService.Delete(id);
-        return RedirectToAction("Index");
+        return await _productService.Delete(id);
     }
+    
+    
     
     
     

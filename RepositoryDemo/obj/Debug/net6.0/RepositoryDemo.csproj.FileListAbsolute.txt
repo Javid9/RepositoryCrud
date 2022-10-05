@@ -59,3 +59,8 @@ C:\Users\Cavid\source\repos\RepositoryDemo\repositorydemo\obj\Debug\net6.0\refin
 C:\Users\Cavid\source\repos\RepositoryDemo\repositorydemo\obj\Debug\net6.0\RepositoryDemo.pdb
 C:\Users\Cavid\source\repos\RepositoryDemo\repositorydemo\obj\Debug\net6.0\RepositoryDemo.genruntimeconfig.cache
 C:\Users\Cavid\source\repos\RepositoryDemo\repositorydemo\obj\Debug\net6.0\ref\RepositoryDemo.dll
+C:\Users\Cavid\source\repos\RepositoryDemo\RepositoryDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Cavid\source\repos\RepositoryDemo\RepositoryDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Cavid\source\repos\RepositoryDemo\RepositoryDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Cavid\source\repos\RepositoryDemo\RepositoryDemo\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Cavid\source\repos\RepositoryDemo\RepositoryDemo\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

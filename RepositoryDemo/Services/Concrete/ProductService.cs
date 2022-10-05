@@ -14,17 +14,20 @@ public class ProductService : IProductService
     private readonly ICategoryRepository _categoryRepository;
     private readonly IWebHostEnvironment _env;
     private readonly IProductRepository _productRepository;
+    private readonly IOrderRepository _orderRepository;
+    private readonly IProductOrderRepository _productOrderRepository;
 
     public ProductService(IProductRepository productRepository, ICategoryRepository categoryRepository,
-        IWebHostEnvironment env)
+        IWebHostEnvironment env, IOrderRepository orderRepository, IProductOrderRepository productOrderRepository)
     {
         _productRepository = productRepository;
         _categoryRepository = categoryRepository;
         _env = env;
+        _orderRepository = orderRepository;
+        _productOrderRepository = productOrderRepository;
     }
 
 
- 
     public async Task<IDataResult<List<Product>>> GetAll()
     {
         var products = await _productRepository.GetAll(null, new[] { "Category" });
@@ -32,8 +35,7 @@ public class ProductService : IProductService
         return new SuccessDataResult<List<Product>>(products, 200);
     }
 
-    
-    
+
     public async Task<IDataResult<Product>> Get(int id)
     {
         var result = await _productRepository.Get(x => x.Id == id, new[] { "Category" });
@@ -41,21 +43,18 @@ public class ProductService : IProductService
         return new SuccessDataResult<Product>(result, 200);
     }
 
-    
-  
+
     public async Task<IDataResult<Product>> Details(int id)
     {
         var result = await _productRepository
             .Table
             .Include(x => x.Category)
             .FirstOrDefaultAsync(x => x.Id == id);
-        
+
         return new SuccessDataResult<Product>(result, 200, "success");
     }
 
-    
-    
-    
+
     public async Task<IResult> Add(ProductCreateDto productCreateDto)
     {
         var result = await _categoryRepository.Get(x => x.Id == productCreateDto.CategoryId);
@@ -87,8 +86,6 @@ public class ProductService : IProductService
     }
 
 
-    
- 
     public async Task<IResult> UpdateProduct(ProductUpdateDto productUpdateDto)
     {
         var result = await _productRepository.Table.Include(x => x.Category)
@@ -112,11 +109,18 @@ public class ProductService : IProductService
     }
 
 
-   
-    public async Task Delete(int id)
+    public async Task<IResult> Delete(int id)
     {
-        var result = await _productRepository.Table.FirstOrDefaultAsync(x => x.Id == id);
+        var existProduct = await _productRepository.Table
+            .Include(x => x.ProductOrders)
+            .FirstOrDefaultAsync(x => x.Id == id);
 
-        await _productRepository.Delete(result);
+        if (existProduct == null) return new ErrorResult(404, "Product not found");
+
+        if (existProduct.ProductOrders.Any()) return new ErrorResult(400, "This product available in order");
+
+        await _productRepository.Delete(existProduct);
+
+        return new SuccessResult(200, "Product removed successfully");
     }
 }

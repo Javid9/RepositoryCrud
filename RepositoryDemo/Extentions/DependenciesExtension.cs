@@ -12,7 +12,6 @@ public static class DependenciesExtension
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
-        services.AddScoped<IUserRepository, UserRepository>();
 
 
         services.AddScoped<ICategoryService, CategoryService>();

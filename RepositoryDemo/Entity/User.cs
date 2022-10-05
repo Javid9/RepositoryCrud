@@ -1,9 +1,10 @@
-﻿namespace RepositoryDemo.Entity;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class User : BaseEntity
+namespace RepositoryDemo.Entity;
+
+public class User : IdentityUser
 {
     public string? FullName { get; set; }
-    public string? Email { get; set; }
 
     public ICollection<Order> Orders { get; set; } = null!;
 }

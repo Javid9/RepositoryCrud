@@ -4,7 +4,7 @@ using RepositoryDemo.Entity;
 
 namespace RepositoryDemo.Repository.Abstract;
 
-public interface IGenericRepository<TEntity> where TEntity : BaseEntity, new()
+public interface IGenericRepository<TEntity> where TEntity : class, new()
 {
     DbSet<TEntity> Table { get; }
     Task<TEntity> Get(Expression<Func<TEntity, bool>> filter, string[]? includes = null);

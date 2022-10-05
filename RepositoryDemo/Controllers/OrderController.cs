@@ -8,13 +8,13 @@ namespace RepositoryDemo.Controllers;
 public class OrderController : Controller
 {
     private readonly IOrderService _orderService;
-
+        
     public OrderController(IOrderService orderService)
     {
         _orderService = orderService;
     }
 
-
+    
     // GET All
     public async Task<IActionResult> Index()
     {
@@ -63,7 +63,8 @@ public class OrderController : Controller
         return RedirectToAction("UserInfo", msg);
     }
 
-
+    
+    
     // Alert
     private (string message, bool success) Notify(bool success, string message)
     {
@@ -77,4 +78,8 @@ public class OrderController : Controller
 
         return (msg.Message, msg.Success);
     }
+    
+    
+    
+    
 }

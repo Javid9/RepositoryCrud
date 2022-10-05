@@ -61,9 +61,9 @@ public class OrderService : IOrderService
     }
 
 
+    
     public async Task<IDataResult<Order>> CreateOrderByUser(CreateOrderByUserDto createOrderByUserDto, int productId)
     {
-        // var result = await _orderRepository.Get(x => x.Id == createOrderByUserDto.Id);
 
         var newOrder = new Order
         {
@@ -88,4 +88,6 @@ public class OrderService : IOrderService
 
         return new DataResult<Order>(newOrder, true, 201, "Order and User successfully save");
     }
+    
+    
 }

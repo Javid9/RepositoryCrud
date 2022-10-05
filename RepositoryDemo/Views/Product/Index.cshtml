@@ -53,8 +53,8 @@
                         Update
                     </a>
                 </td>
-                <td>
-                    <a class="btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">
+                <td >
+                    <a class="btn-outline-danger btn-delete" data-id="@item.Id">
                         Delete
                     </a>
                 </td>
@@ -67,11 +67,17 @@
 </div>
 
 
+ 
+
+
 @section Scripts
 {
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
     <script>
     let saveOrderBtn=document.getElementById("save-order");
     saveOrderBtn.addEventListener("click",function (){
@@ -135,10 +141,45 @@
     
       
       
+      
+      //Delete
+      let btnDelete = document.querySelectorAll(".btn-delete");
+              btnDelete.forEach(item => {
+                  item.addEventListener("click", function (e) {
+                      let id = e.target.getAttribute("data-id");
+                      Swal.fire({
+                          title: 'Do you want to delete?',
+                          showCancelButton: true,
+                          confirmButtonText: 'Yes',
+                      }).then((result) => {
+                          /* Read more about isConfirmed, isDenied below */
+                          if (result.isConfirmed) {
+                              axios.post('/Product/Delete?id=' + id)
+                                  .then(function (response) {
+                                      console.log(response.data.message)
+                                      Swal.fire({
+                                          position: 'top-center',
+                                          icon: response.data.success ? 'success' : 'error',
+                                          title: response.data.message,
+                                          showConfirmButton: false,
+                                          timer: 1300
+                                      }).then(function (result) {
+                                          window.location = '/Product/Index';
+                                      })
+                                  })
+                                  .catch(function (error) {
+                                  });
+                          }
+                      });
+                   
+                  });
+              })
+      
+      
     </script>
-    
-    
-    
-    
-    
+
+
+
+
+
 }

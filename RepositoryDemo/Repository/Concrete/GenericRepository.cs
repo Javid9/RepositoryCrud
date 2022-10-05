@@ -6,7 +6,7 @@ using RepositoryDemo.Repository.Abstract;
 
 namespace RepositoryDemo.Repository.Concrete;
 
-public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity, new()
+public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, new()
 {
     private readonly AppDbContext _context;
 

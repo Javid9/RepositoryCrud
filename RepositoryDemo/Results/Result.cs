@@ -2,7 +2,8 @@ namespace RepositoryDemo.Results;
 
 public class Result : IResult
 {
-    public Result(bool success, int statusCode, string message) : this(success, statusCode)
+    public Result(bool success, int statusCode, string message) : this(success,
+        statusCode)
     {
         Message = message;
     }

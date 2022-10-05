@@ -1,9 +1,9 @@
-﻿using RepositoryDemo.Entity;
-using RepositoryDemo.Results;
+﻿using RepositoryDemo.Dtos;
+using IResult = RepositoryDemo.Results.IResult;
 
 namespace RepositoryDemo.Services.Abstract;
 
 public interface IUserService
-{
-    Task<IDataResult<User>> GetDefaultUser();
+{ 
+    Task<IResult> Register(RegisterDto registerDto);
 }
