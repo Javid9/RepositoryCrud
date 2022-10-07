@@ -43,4 +43,32 @@ public class UserService : IUserService
 
         return new SuccessResult(200, "User Created");
     }
+
+    
+    public async Task<IResult> Login(LoginDto loginDto)
+    {
+        var loginUser = await _userManager.FindByEmailAsync(loginDto.Email);
+        if (loginUser == null)
+        {
+            return new ErrorResult(400, "Email or Password wrong");
+        }
+
+        
+        
+        var signInResult = await _signInManager.PasswordSignInAsync(loginUser,loginDto.Password,true,false);
+
+        if (signInResult.IsLockedOut)
+        {
+            return new ErrorResult(400, "The account is locked out");
+        }
+
+
+        if (!signInResult.Succeeded)
+        {
+            return new ErrorResult(400, "Email or password wrong");
+        }
+        
+
+        return new SuccessResult(200, "ok");
+    }
 }

@@ -42,6 +42,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 using (var scope = app.Services.CreateScope())
 {
     var servicesProvider = scope.ServiceProvider;
@@ -64,6 +66,7 @@ using (var scope = app.Services.CreateScope())
     {
     }
 }
+
 
 
 app.UseHttpsRedirection();

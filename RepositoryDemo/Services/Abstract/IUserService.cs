@@ -6,4 +6,5 @@ namespace RepositoryDemo.Services.Abstract;
 public interface IUserService
 { 
     Task<IResult> Register(RegisterDto registerDto);
+    Task<IResult> Login(LoginDto loginDto);
 }

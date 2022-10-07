@@ -29,12 +29,35 @@ public class AccountController : Controller
             ModelState.AddModelError("",result.Message);
             return View(registerDto);
         }
+        
         return RedirectToAction("Index","Home");
     }
 
+    
+    
 
     public IActionResult Login()
     {
         return View();
     }
+
+
+
+
+
+    [HttpPost]
+      public async Task<IActionResult> Login(LoginDto loginDto)
+    {
+        var result =  await _userService.Login(loginDto);
+
+        if (!result.Success)
+        {
+            ModelState.AddModelError("",result.Message);
+            return View();
+        }
+
+        return RedirectToAction("Index", "Home");
+    }
+
+
 }
