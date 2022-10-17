@@ -1,0 +1,284 @@
+﻿@using RepositoryDemo.Dtos
+@model List<RepositoryDemo.Dtos.BasketDto>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<style>
+    .disabled{
+    pointer-events: none;
+    color: #ccc;
+    }
+</style>
+
+<nav class="breadcrumb-section theme1 bg-lighten2 pt-110 pb-110">
+           <div class="container">
+               <div class="row">
+                   <div class="col-12">
+                       <div class="section-title text-center mb-15">
+                           <h2 class="title text-dark text-capitalize">Basket</h2>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </nav>
+   <div class="container">
+       <div class="row mt-3" id="basketBox">
+           @if (Model.Count != 0)
+           {
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+   
+                   <table class="table table-striped">
+                       <thead>
+                           <tr>
+                               <th scope="col">Image</th>
+                               <th scope="col">Name</th>
+                               <th scope="col">Price</th>
+                               <th scope="col">ProductTotalPrice</th>
+                               <th scope="col">Count</th>
+                               <th scope="col">Minus</th>
+                               <th scope="col">Plus</th>
+                               <th scope="col">Delete</th>
+                           </tr>
+                       </thead>
+                       <tbody id="parentBody">
+                           @foreach (BasketDto item in Model)
+                           {
+                               <tr id="parentTr">
+                                   <td>
+                                   <img src="~/image/@item.Image" width="100" />
+                                   </td>
+                                   <td>@item.Name</td>
+                                   <td>@item.Price.ToString("C2")</td>
+                                   <td>@item.ProductTotalPrice.ToString("C2")</td>
+                                   <td>
+                                       @item.BasketCount
+                                   </td>
+                                   <td>
+                                       @if (item.BasketCount > 1)
+                                       {
+                                           <a>
+                                               <i class="fas fa-minus minusProduct" data-id="@item.Id"></i>
+                                           </a>
+                                       }
+                                       else
+                                       {
+                                           <a>
+                                               <i class="fas fa-minus minusProduct d-none" data-id="@item.Id"></i>
+                                           </a>
+                                       }
+                                   </td>
+                                   <td>
+                                       @if (item.BasketCount < item.Quantity)
+                                       {
+                                           <a>
+                                               <i class="fas fa-plus plusProduct" data-id="@item.Id"></i>
+                                           </a>
+                                       }
+                                   </td>
+                                   <td>
+                                       <a>
+                                           <i class="fas fa-trash-alt removeProduct" data-id="@item.Id"></i>
+                                       </a>
+                                   </td>
+                               </tr>
+                           }
+                       </tbody>
+                   </table>
+               </div>
+   
+   
+               <div class="col-12" id="basketTotalPrice">Total: @ViewBag.BasketTotalPrice.ToString("C2")</div>
+               @* <div class="col-12"> *@
+               @*      *@
+               @*         <a asp-controller="basket" asp-action="basketsale" class="btn theme-btn--dark1 btn--lg">Al</a> *@
+               @*      *@
+               @* </div> *@
+   
+           }
+           else
+           {
+               @* @if (TempData["success"] != null) *@
+               @* { *@
+               @*     <div class="mt-3 alert alert-success">@TempData["success"]</div> *@
+               @* } *@
+               <p>
+                   @* Sebet boshdur mehsullari sechmek uchun ya *@
+                   @* <a asp-controller="Home" asp-action="Index">Home</a> ya da *@
+                   @* <a asp-controller="Shop" asp-action="Index">Shop</a> sehifesine baxa bilersiniz *@
+               </p>
+           }
+       </div>
+   </div>
+
+
+
+
+
+@section Scripts
+{
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+    
+    //Basket plus Count
+    
+    let plusProduct = document.querySelectorAll('.plusProduct');
+    
+    plusProduct.forEach(item => {
+        item.addEventListener("click", function (e) {
+            var plusBtn = e.target;
+            let formdata = new FormData();
+            let id = plusBtn.getAttribute("data-id");
+            formdata.append("id", id);
+            axios.post('/basket/ProductCountPlus', formdata)
+                .then(function (response) {
+                    console.log(response.data.result.data)
+                    const data = response.data.result.data;
+                    let basketTotalPrice = document.getElementById('basketTotalPrice');
+                    
+                    
+
+                    basketTotalPrice.innerHTML = 'Total: $ ' + data.basketTotalPrice;
+                    plusBtn.parentElement.parentElement.previousElementSibling.
+                    previousElementSibling.textContent = data.productBasketCount;
+                    plusBtn.parentElement.parentElement.previousElementSibling.previousElementSibling
+                    .previousElementSibling.textContent = data.productTotalPrice;
+
+                    if (data.productBasketCount > 1) {
+                        plusBtn.parentElement.parentElement.previousElementSibling
+                            .firstElementChild.firstElementChild.classList.remove('d-none');
+                    }
+
+                    if (data.productBasketCount == data.basketProductDbCount) {
+                        plusBtn.classList.add('d-none');
+                    }
+
+                })
+                .catch(function (error) {
+                    if (error.response) {
+                        let errorObj = error.response.data;
+                        for (let errors in errorObj) {
+                            let error = errorObj[errors];
+                            console.log(error);
+                        }
+                    }
+                });
+        })
+    })
+    
+    
+    
+   
+     //Basket minus Count
+    let minusProduct = document.querySelectorAll('.minusProduct');
+     minusProduct.forEach(item => {
+        item.addEventListener("click", function (e) {
+            var minusBtn = e.target;
+            
+
+            let formdata = new FormData();
+            let id = minusBtn.getAttribute("data-id");
+            formdata.append("id", id);
+            axios.post('/basket/ProductCountMinus', formdata)
+    
+                .then(function (response) {
+                    // console.log(response.data.productBasketCount)
+                    const data = response.data.result.data;
+                    let basketTotalPrice = document.getElementById('basketTotalPrice')
+                    
+                    basketTotalPrice.innerHTML = 'Total: $ ' + data.basketTotalPrice;
+                    
+                    minusBtn.parentElement.parentElement.previousElementSibling.textContent = data.productBasketCount;
+                    minusBtn.parentElement.parentElement.previousElementSibling.
+                    previousElementSibling.textContent = data.productTotalPrice;
+    
+                    
+                    if (response.data.productBasketCount == 1) {
+                         minusBtn.classList.add('d-none');
+                         
+                        } 
+                         else {
+                            minusBtn.parentElement.parentElement.nextElementSibling.
+                                firstElementChild.firstElementChild.classList.remove('d-none');
+                        }
+                         
+    
+                })
+                .catch(function (error) {
+                    if (error.response) {
+                        let errorObj = error.response.data;
+                        for (let errors in errorObj) {
+                            let error = errorObj[errors];
+                            console.log(error);
+                        }
+                    }
+                });
+        })
+    })
+
+
+
+
+ 
+    //remove product from basket
+    let allRemove = document.querySelectorAll(".removeProduct");
+    allRemove.forEach(item => {
+        item.addEventListener("click", function (e) {
+            let id = e.target.getAttribute("data-id");
+            let formdata = new FormData();
+            formdata.append("id", id);
+            axios.post('/basket/RemoveProduct', formdata)
+                .then(function (response) {
+                    Swal.fire({
+                  position: 'top-center',
+                  icon:'success',
+                  title:"Product remove basket",
+                  showConfirmButton: false,
+                  timer: 1300
+              });
+                   
+                    
+                    console.log(response.data)
+                    let basketTotalPrice = document.getElementById('basketTotalPrice');
+                  
+                    item.parentElement.parentElement.parentElement.remove();
+    
+                    if (data.basketTotalPrice > 0) {
+                        basketTotalPrice.innerHTML = 'Total: $ ' + data.basketTotalPrice;
+                    } 
+                    else {
+                        basketTotalPrice.remove();
+                        let link =
+                            `<p>
+                        Sebet boshdur mehsullari sechmek uchun 
+                        <a href="Home">Home</a> 
+                       sehifesine baxa bilersiniz
+                    </p>`
+                        document.getElementById('basketBox').innerHTML = link;
+                    }
+                })
+                
+                .catch(function (error) {
+                    if (error.response) {
+                        let errorObj = error.response.data;
+                        for (let errors in errorObj) {
+                            let error = errorObj[errors];
+                            console.log(error);
+                        }
+                    }
+                });
+        })
+    })
+
+
+
+
+    
+    
+    </script>
+
+}

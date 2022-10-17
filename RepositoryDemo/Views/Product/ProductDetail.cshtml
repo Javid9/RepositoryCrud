@@ -1,0 +1,124 @@
+﻿@model RepositoryDemo.Entity.Product
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+
+<section class="product-section fromhere">
+<div class="container-fluid" style="background-color: #F9F7F7;">
+    <div class="row pl-5">
+        <div class="product">
+           <h1>Product List</h1>
+           <p>Where products are our inspiration</p>
+        </div>
+    </div>
+</div> 
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row mt-5 adding-info ">
+            <div class="col-lg-6 pl-0">
+                <div class="row pl-0">
+                    <div class="col-lg-4 small-image pl-0 ">
+                        <img src="~/image/@Model.Image" style="width:410px;height:280px"/> 
+                    </div>
+                    <div class="col-lg-5 full-image">
+                        <img id="empty" src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 w-50 ">
+               <div class="col-12 adding-info">
+                <div class="adding-detail ">
+                    <div class="flower-name-price ">
+                        <h2>@Model.Name</h2>
+                        <p class="price">$@Model.Price.ToString("F")</p>
+                        <p class="info">                                              
+                        @Model.Title</p>
+                    </div>
+                    <div class="count-flower" style="width: 100%;">
+                        <button  class="btn-dark " id="addToBasket" data-id="@Model.Id" style="width: 350px; height: 60px;">Add to Cart</button>                       
+                    </div>
+                    <div class="mt-3">
+                    <p>Count: <span>@Model.Quantity</span></p>
+                    <p>Categories: <span> @Model.Category.Name</span></p>
+                    <p>Tags: <span>Llilies, Orchids</span></p>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+@section Scripts
+{
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>;
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+   function AddToBasket(elements) {
+       
+       let btnAdd;
+       if (elements === undefined) {
+           btnAdd = document.getElementById("addToBasket");
+       } else {
+           btnAdd = elements;
+       }
+       
+       
+           btnAdd.addEventListener("click", function (e) {
+               let id = e.target.getAttribute("data-id");
+               let formData = new FormData();
+           
+   
+               formData.append("id", id);
+               axios.post('/basket/AddBasket/', formData)
+                   .then(function (response) {
+                     Swal.fire({
+                     title: 'Good job!',
+                     text: 'Product Added Basket',
+                     success:'success',
+                     timer: 2000
+                   })
+                      
+   
+                   })
+                   .catch(function (error) {
+                       alert("error")
+                       if (error.response) {
+                           let errorObj = error.response.data;
+                           for (let errors in errorObj) {
+                               let error = errorObj[errors];
+                               console.log(error);
+                           }
+                       }
+                   });
+           })
+   }                 
+   
+   AddToBasket(); 
+    </script>
+}
+
+
+
+
+
+
+
+
+
