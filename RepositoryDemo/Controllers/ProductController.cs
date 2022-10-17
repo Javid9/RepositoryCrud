@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RepositoryDemo.Dtos;
 using RepositoryDemo.Services.Abstract;
-using RepositoryDemo.ViewModels;
 using IResult= RepositoryDemo.Results.IResult;
 namespace RepositoryDemo.Controllers;
 
@@ -17,16 +16,19 @@ public class ProductController : Controller
         _categoryService = categoryService;
     }
 
-
+    
+    
+    
     //Get All
     public async Task<IActionResult> Index()
     {
         var products = await _productService.GetAll();
-
         return View(products.Data);
     }
 
 
+    
+    
     //Details
     public async Task<IActionResult> Details(int id)
     {
@@ -67,11 +69,8 @@ public class ProductController : Controller
 
         var product = await _productService.Get(id);
 
-        var productVm = new ProductViewModel
-        {
-            Product = product.Data
-        };
-        return View(productVm.Product);
+        
+        return View(product.Data);
     }
 
 
@@ -97,9 +96,27 @@ public class ProductController : Controller
     {
         return await _productService.Delete(id);
     }
+
+
+
+    
+    public async Task<IActionResult> ProductIndex()
+    {
+        var result = await _productService.ProductIndex();
+        return View(result.Data);
+    }
     
     
     
     
-    
+    public async Task<IActionResult> ProductDetail(int id)
+    {
+        
+        var result = await _productService.ProductDetail(id);
+        return View(result.Data);
+    }
+   
+
+
+
 }

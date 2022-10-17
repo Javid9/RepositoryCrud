@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j0OExRcaHVRp/t0JQeV/rwmrQp6UgqnJYTw0jdlHo/U=",
+  "Hash": "IEq+tOMlDFJzq9n/6rExGl6w67WJg/VZOK14XoJyzuc=",
   "Source": "RepositoryDemo",
   "BasePath": "_content/RepositoryDemo",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\image\\07cb097f-9126-4c27-be6d-ecf826e48993img-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\1091f090-371d-4cc9-b180-50c9e5a79db6iphones-ge0c9aaf50_640.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/1091f090-371d-4cc9-b180-50c9e5a79db6iphones-ge0c9aaf50_640.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\1091f090-371d-4cc9-b180-50c9e5a79db6iphones-ge0c9aaf50_640.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\10b9d4b5-a4fb-4f16-a0ab-192fd39f61be10-Demain-le-mot-anglais-blanc.jpg",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -236,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\1f25c736-db30-4055-ba52-436ae0b9c71awp1828903.png"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\2048c3ab-f40a-4f8c-a665-213228819586apple-g2e8716c36_640.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/2048c3ab-f40a-4f8c-a665-213228819586apple-g2e8716c36_640.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\2048c3ab-f40a-4f8c-a665-213228819586apple-g2e8716c36_640.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\20be473c-ea5f-4639-b6e8-775c80bc54d8wp1828903.png",
@@ -714,6 +748,23 @@
       "OriginalItemSpec": "wwwroot\\image\\7468126d-7c7d-49d0-96a9-31eab45a90f9visual-web-developer-background-image-3.jpg"
     },
     {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\784c2db2-69ca-4869-b2f8-8f48df838e69iphones-ge0c9aaf50_640.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/784c2db2-69ca-4869-b2f8-8f48df838e69iphones-ge0c9aaf50_640.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\784c2db2-69ca-4869-b2f8-8f48df838e69iphones-ge0c9aaf50_640.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\7ad5c559-88c5-4296-a77a-17554680eb0bimg-1.jpg",
       "SourceId": "RepositoryDemo",
       "SourceType": "Discovered",
@@ -763,6 +814,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\7d7e83b4-9a79-4505-8060-950aa36df577visual-web-developer-background-image-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\810a82d8-1185-4411-bbd1-1df4fd91016fapple-g2e8716c36_640.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/810a82d8-1185-4411-bbd1-1df4fd91016fapple-g2e8716c36_640.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\810a82d8-1185-4411-bbd1-1df4fd91016fapple-g2e8716c36_640.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\81e931e0-cf76-4314-94b0-aaf31881a4e3web-developer-background_2358378.jpg",
@@ -1154,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\cdfdbb19-a660-4254-848c-87384fc3f116wp1828903.png"
+    },
+    {
+      "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\d0f72f8a-fe54-491d-b9df-4d148f8d78ecapple-g2e8716c36_640.jpg",
+      "SourceId": "RepositoryDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\",
+      "BasePath": "_content/RepositoryDemo",
+      "RelativePath": "image/d0f72f8a-fe54-491d-b9df-4d148f8d78ecapple-g2e8716c36_640.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\d0f72f8a-fe54-491d-b9df-4d148f8d78ecapple-g2e8716c36_640.jpg"
     },
     {
       "Identity": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\wwwroot\\image\\d5ff5116-e7df-45c6-9041-5dc38e081d2awp1828903.png",

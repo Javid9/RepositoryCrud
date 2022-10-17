@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1vK4drosx/84CVprNci6AxexLFVTEkLRfC2Qg5GEGzftucUw8cpRyFfiGMwBJBLrBZLxKz6LY6SPrgYq5yx4LA==",
+  "dgSpecHash": "OKOo5wWzarSJab9tuMGP3q8HvuW7tt9mZ4cAahbyyA2a9giTObRjpkeAE4dqKuEFWwmAfItDWajZ5sP3fpT2hg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cavid\\source\\repos\\RepositoryDemo\\RepositoryDemo\\RepositoryDemo.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,9 @@
     "C:\\Users\\Cavid\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Cavid\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Cavid\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Cavid\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Cavid\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Cavid\\.nuget\\packages\\newtonsoft.json.schema\\3.0.14\\newtonsoft.json.schema.3.0.14.nupkg.sha512",
     "C:\\Users\\Cavid\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Cavid\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Cavid\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

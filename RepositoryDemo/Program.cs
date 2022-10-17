@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RepositoryDemo.Context;
@@ -10,12 +11,15 @@ var configuration = builder.Configuration;
 var services = builder.Services;
 // Add services to the container.
 
-services.AddControllersWithViews();
 services.AddDependencies();
 services.AddDbContext<AppDbContext>(optionsBuilder =>
 {
     optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
+
+services.AddControllersWithViews().AddJsonOptions(x =>
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 services.AddIdentity<User, IdentityRole>(identityOption =>
 {
     identityOption.Password.RequiredLength = 7;
@@ -43,7 +47,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-
 using (var scope = app.Services.CreateScope())
 {
     var servicesProvider = scope.ServiceProvider;
@@ -66,7 +69,6 @@ using (var scope = app.Services.CreateScope())
     {
     }
 }
-
 
 
 app.UseHttpsRedirection();

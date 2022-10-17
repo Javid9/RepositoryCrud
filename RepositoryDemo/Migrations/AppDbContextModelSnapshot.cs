@@ -168,7 +168,7 @@ namespace RepositoryDemo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryDemo.Entity.Order", b =>
@@ -198,7 +198,7 @@ namespace RepositoryDemo.Migrations
 
                     b.HasIndex("UserId1");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryDemo.Entity.Product", b =>
@@ -225,11 +225,14 @@ namespace RepositoryDemo.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryDemo.Entity.ProductOrder", b =>
@@ -252,7 +255,7 @@ namespace RepositoryDemo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductOrders");
+                    b.ToTable("ProductOrders", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryDemo.Entity.User", b =>

@@ -1,4 +1,5 @@
-﻿using RepositoryDemo.Repository.Abstract;
+﻿using RepositoryDemo.Dtos;
+using RepositoryDemo.Repository.Abstract;
 using RepositoryDemo.Repository.Concrete;
 using RepositoryDemo.Services.Abstract;
 using RepositoryDemo.Services.Concrete;
@@ -21,5 +22,7 @@ public static class DependenciesExtension
 
 
         services.AddScoped<IProductOrderRepository, ProductOrderRepository>();
+        
+        services.AddScoped<IBasketService, BasketService>();
     }
 }

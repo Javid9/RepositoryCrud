@@ -29,7 +29,7 @@
                     <td>
                         <img src="~/image/@item.Product.Image" style="width:100px;height:100px"/>
                     </td>
-                    <td>@(order.FullName != null ? order.FullName : order.User.FullName)</td>
+                    <td>@order.FullName</td>
                     <td>@item.Product.Name</td>
                     <td>@item.Product.Category.Name</td>
                     <td>@item.Product.Price.ToString("F")</td>

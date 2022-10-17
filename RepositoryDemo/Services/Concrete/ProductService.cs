@@ -108,6 +108,7 @@ public class ProductService : IProductService
         return new SuccessResult(201, "Product successfully created");
     }
 
+    
 
     public async Task<IResult> Delete(int id)
     {
@@ -123,4 +124,24 @@ public class ProductService : IProductService
 
         return new SuccessResult(200, "Product removed successfully");
     }
+
+    
+    
+    public async Task<IDataResult<List<Product>>> ProductIndex()
+    {
+        var products = await _productRepository.GetAll(null, new[] { "Category" });
+        if (products.Count is 0) return new ErrorDataResult<List<Product>>(products, 200, "Not Found");
+        return new SuccessDataResult<List<Product>>(products, 200);
+    }
+
+    
+    public async Task<IDataResult<Product>> ProductDetail(int id)
+    {
+        var result = await _productRepository.Get(x => x.Id == id, new []{"Category"});
+        if (result is null) return new ErrorDataResult<Product>(result, 404, "Not Found");
+        return new SuccessDataResult<Product>(result, 200);
+
+    }
+    
+    
 }

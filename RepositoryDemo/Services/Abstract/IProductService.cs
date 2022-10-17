@@ -15,5 +15,8 @@ public interface IProductService
     Task<IResult> UpdateProduct(ProductUpdateDto productUpdateDto);
 
     Task<IResult> Delete(int id);
-    // Task<string> Upload(IFormFile file, string path);
+
+    Task<IDataResult<List<Product>>> ProductIndex();
+    Task<IDataResult<Product>> ProductDetail(int id);
+
 }

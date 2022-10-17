@@ -1,3 +1,5 @@
+using RepositoryDemo.Entity;
+
 namespace RepositoryDemo.Results;
 
 public class DataResult<T> : Result, IDataResult<T>
